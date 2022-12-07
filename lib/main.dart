@@ -24,6 +24,16 @@ class HamzaCard extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            const Center(
+              child: CircleAvatar(
+                backgroundImage: AssetImage('images/avatar.jpg'),
+                radius: 50.0,
+              ),
+            ),
+            Divider(
+              height: 60.0,
+              color: Colors.blueGrey[800]
+            ),
             const Text(
               "NAME",
               style: TextStyle(
