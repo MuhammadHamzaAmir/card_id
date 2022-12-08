@@ -6,8 +6,16 @@ void main() {
   ));
 }
 
-class HamzaCard extends StatelessWidget {
+class HamzaCard extends StatefulWidget {
   const HamzaCard({Key? key}) : super(key: key);
+
+  @override
+  State<HamzaCard> createState() => _HamzaCardState();
+}
+
+class _HamzaCardState extends State<HamzaCard> {
+
+  int level =0;
 
   @override
   Widget build(BuildContext context) {
@@ -18,6 +26,15 @@ class HamzaCard extends StatelessWidget {
         centerTitle: true,
         backgroundColor: Colors.blueGrey[700],
         elevation: 0.0,
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          setState(() {
+            level++;
+          });
+        },
+        backgroundColor: Colors.blueGrey[700],
+        child: const Icon(Icons.add),
       ),
       body: Padding(
         padding: const EdgeInsets.fromLTRB(25.0, 40.0, 25.0, 5.0),
@@ -61,7 +78,7 @@ class HamzaCard extends StatelessWidget {
             ),
             const SizedBox(height: 10.0),
             Text(
-              "7",
+              '$level',
               style: TextStyle(
                 color: Colors.amberAccent[200],
                 letterSpacing: 2.0,
@@ -93,3 +110,4 @@ class HamzaCard extends StatelessWidget {
     );
   }
 }
+
